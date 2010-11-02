@@ -11,9 +11,13 @@ var videosHeader = document.createElement('h3');
 videosHeader.setAttribute('class', 'accordion-header');
 videosHeader.innerHTML = 'Video URLs';
 accordion.appendChild(videosHeader);
-var videoList = document.createElement('p');
+
+var videoList = document.createElement('textarea');
 videoList.setAttribute('class', 'accordion-section');
 videoList.setAttribute('id', 'videoList');
+videoList.setAttribute('style', 'width: 99%; height: 100px; overflow: auto');
+videoList.setAttribute('onclick', 'this.focus(); this.select()');
+
 accordion.appendChild(videoList);
 
 var videoUrls = new Array();
@@ -24,8 +28,9 @@ var videoUrls = new Array();
 function addVideo(url) {
   videoUrls.push(url);
   videoUrls.sort(function(x, y) { return x < y; });
-  videoList.innerHTML = videoUrls.join('<br />');
+  videoList.innerHTML = videoUrls.join('\n');
 }
+
 
 /**
  * Extracts .wmv URL from 'text'.
