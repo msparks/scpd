@@ -5,6 +5,28 @@
 // @include       https://myvideosu.stanford.edu/*
 // ==/UserScript==
 
+/* Set up the Video URLs box. */
+var accordion = document.getElementById('course_sections').childNodes[1];
+var videosHeader = document.createElement('h3');
+videosHeader.setAttribute('class', 'accordion-header');
+videosHeader.innerHTML = 'Video URLs';
+accordion.appendChild(videosHeader);
+var videoList = document.createElement('p');
+videoList.setAttribute('class', 'accordion-section');
+videoList.setAttribute('id', 'videoList');
+accordion.appendChild(videoList);
+
+var videoUrls = new Array();
+
+/**
+ * Adds a video to the Video URLs box.
+ */
+function addVideo(url) {
+  videoUrls.push(url);
+  videoUrls.sort(function(x, y) { return x < y; });
+  videoList.innerHTML = videoUrls.join('<br />');
+}
+
 /**
  * Extracts .wmv URL from 'text'.
  */
@@ -48,6 +70,7 @@ function rewriteLink(anchor) {
         anchor.setAttribute('href', wmv);
         /* Change the text. */
         anchor.innerHTML = 'Video link';
+        addVideo(wmv);
       }
     }
   }
