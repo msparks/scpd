@@ -12,3 +12,7 @@ scpd.user.js
   browser and then view a list of lectures. The WMV links will be replaced with
   direct video links, and a textarea box will appear towards the bottom of the
   page with all the URLs.
+
+scrape_urls.pl
+  A perl script to log in to the SCPD website and scrape all video URLs for the
+  current quarter.
