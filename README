@@ -1,3 +1,14 @@
-This is a respository for a userscript to get direct URLs for SCPD videos. Just
-install it and then view a list of lectures. The WMV links will be replaced
-with direct video links.
+This is a repository of scripts that are helpful in downloading SCPD videos.
+
+The scripts DO NOT make SCPD videos available to the general public. They only
+make viewing the videos more convenient and accessible for those students
+already authorized to view them.
+
+fetch.sh
+  A shell script to download videos given a list of URLs.
+
+scpd.user.js
+  A userscript to get direct URLs for SCPD videos. Just install it in your
+  browser and then view a list of lectures. The WMV links will be replaced with
+  direct video links, and a textarea box will appear towards the bottom of the
+  page with all the URLs.
